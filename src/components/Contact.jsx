@@ -1,67 +1,94 @@
 import styled from "styled-components";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
+
+const Section = styled(motion.section)`
+  width: 100%;
+  padding: 100px 20px 60px;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  scroll-margin-top: 90px;
+`;
+
+const Title = styled.h1`
+  color: white;
+  text-align: center;
+  margin-bottom: 40px;
+`;
 
 const Content = styled.div`
-  width: 60vw;
-  margin: 0 auto;
-  padding: 35px;
-  border-radius: 18px;
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  width: min(900px, 95vw);
 
-  @media (max-width: 768px) {
-    width: 90vw;
-    padding: 20px;
+  padding: 30px;
+  box-sizing: border-box;
+
+  border-radius: 18px;
+  background: rgba(255,255,255,.08);
+  backdrop-filter: blur(12px);
+
+  border: 1px solid rgba(255,255,255,.15);
+  box-shadow: 0 10px 30px rgba(0,0,0,.35);
+
+  @media (max-width:768px){
+    width:100%;
+    padding:20px;
   }
 `;
 
 const Grid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 18px;
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:20px;
 
-  @media (max-width: 768px) {
-    grid-template-columns: 1fr;
+  @media(max-width:768px){
+    grid-template-columns:1fr;
   }
 `;
 
 const Card = styled(motion.div)`
-  padding: 18px;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  transition: 0.3s;
+  padding:18px;
+  border-radius:12px;
 
-  &:hover {
-    transform: translateY(-5px);
-    border-color: #00d4ff;
-    box-shadow: 0 8px 20px rgba(0, 212, 255, 0.25);
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.12);
+
+  transition:.3s;
+
+  h3{
+    color:#00d4ff;
+    margin-bottom:10px;
   }
 
-  h3 {
-    margin: 0;
-    color: #00d4ff;
-    font-size: 1rem;
-    margin-bottom: 8px;
+  p,a{
+    color:white;
+    text-decoration:none;
+    word-break:break-word;
+    line-height:1.6;
   }
 
-  p,
-  a {
-    margin: 0;
-    color: white;
-    text-decoration: none;
-    word-break: break-word;
-    font-size: 0.95rem;
+  &:hover{
+    transform:translateY(-5px);
+    border-color:#00d4ff;
+    box-shadow:0 8px 20px rgba(0,212,255,.25);
   }
 
-  a:hover {
-    color: #00d4ff;
+  a:hover{
+    color:#00d4ff;
   }
 `;
 
 function Contact() {
+  const ref = useRef(null);
+
+  const isInView = useInView(ref, {
+    amount: 0.15,
+    once: false,
+  });
+
   const contactInfo = [
     { label: "Name", value: "Tanishq Katiyar" },
     { label: "Role", value: "Frontend Developer" },
@@ -70,41 +97,47 @@ function Contact() {
     { label: "Location", value: "Kanpur, Uttar Pradesh" },
     { label: "GitHub", value: "https://github.com/tanishqkatiyar-sys" },
     { label: "LinkedIn", value: "https://www.linkedin.com/in/tanishq-katiyar-46220029a/" },
-    { label: "Leetcode", value: "https://leetcode.com/u/tanishq_katiyar/" },
+    { label: "LeetCode", value: "https://leetcode.com/u/tanishq_katiyar/" },
   ];
 
   return (
-    <motion.section
+    <Section
+      ref={ref}
       id="contact"
       initial={{ opacity: 0, x: -150 }}
-      whileInView={{ opacity: 1, x: 0 }}
+      animate={
+        isInView
+          ? { opacity: 1, x: 0 }
+          : { opacity: 0, x: -150 }
+      }
       transition={{
-        duration: 1.5,
+        duration: 1.2,
         type: "spring",
         stiffness: 40,
-        damping: 20,
+        damping: 18,
       }}
-      viewport={{ once: false, amount: 0.3 }}
     >
-      <h1 
-        style={{
-          textAlign: "center",
-          marginTop: "100px",
-          marginBottom: "40px",
-          color: "white",
-          marginTop:"220px",
-        }}
-      >
-        Contact Me
-      </h1>
+      <Title>Contact Me</Title>
 
       <Content>
         <Grid>
           {contactInfo.map((contact, index) => (
             <Card
               key={index}
-              whileHover={{ scale: 1.03 }}
-              transition={{ duration: 0.3 }}
+              initial={{ opacity: 0, y: 60 }}
+              animate={
+                isInView
+                  ? { opacity: 1, y: 0 }
+                  : { opacity: 0, y: 60 }
+              }
+              transition={{
+                duration: 0.5,
+                delay: index * 0.12,
+              }}
+              whileHover={{
+                scale: 1.03,
+                y: -5,
+              }}
             >
               <h3>{contact.label}</h3>
 
@@ -123,7 +156,7 @@ function Contact() {
           ))}
         </Grid>
       </Content>
-    </motion.section>
+    </Section>
   );
 }
 

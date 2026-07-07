@@ -1,62 +1,126 @@
-// import { Button } from "react-bootstrap"
-import { Alert, Navbar, Container, NavDropdown, Nav } from "react-bootstrap"
-import styled from "styled-components"
-// import Scrollanimation from "./Scrollanimation";
+import { useState } from "react";
+import { Navbar, Container, Nav } from "react-bootstrap";
+import styled from "styled-components";
 
 const Content = styled.div`
-  background-color: black;
-  border: 1px solid rgba(255,255,255,0.2);
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(255,255,255,0.15);
-  /* margin: 20px; */
-  overflow: hidden; 
   position: fixed;
-    top: 0;
-    left: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+
+  background: rgba(20, 20, 35, 0.55);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+
+  .navbar {
     width: 100%;
-    height: 70px;
+    padding: 12px 0;
+  }
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  .navbar-brand {
+    color: white !important;
+    font-weight: 700;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+  }
 
-    padding: 0 40px;
+  .nav-link {
+    color: rgba(255,255,255,0.9) !important;
+    margin-left: 18px;
+    transition: 0.3s;
+    font-weight: 500;
+  }
 
-    background: rgba(0, 0, 0, 0.8);
-    backdrop-filter: blur(10px);
+  .nav-link:hover {
+    color: #66d9ff !important;
+  }
 
-    z-index: 1000;
-    box-sizing: border-box;
+  .navbar-toggler {
+    border: 1px solid rgba(255,255,255,0.35);
+    background: rgba(255,255,255,0.08);
+    padding: 6px 10px;
+    box-shadow: none !important;
+  }
 
+  .navbar-toggler:hover {
+    background: rgba(255,255,255,0.15);
+  }
+
+  .navbar-toggler:focus {
+    box-shadow: none;
+  }
+
+  .navbar-toggler-icon {
+    background-image: var(--bs-navbar-toggler-icon-bg) !important;
+  }
+
+  @media (max-width: 991px) {
+
+    .navbar-collapse {
+      margin-top: 12px;
+      padding: 18px;
+
+      background: rgba(30, 30, 45, 0.75);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 18px;
+
+      box-shadow: 0 15px 35px rgba(0,0,0,.35);
+    }
+
+    .nav-link {
+      text-align: center;
+      margin: 12px 0;
+      padding: 10px;
+      border-radius: 10px;
+    }
+
+    .nav-link:hover {
+      background: rgba(255,255,255,0.08);
+    }
+  }
 `;
 
 function MyNavbar() {
-    
+  const [expanded, setExpanded] = useState(false);
 
-    return (
-        <>
+  const closeMenu = () => setExpanded(false);
 
-            {/*  */}
-<Content>
-            <Navbar id="navbar" expand="lg">
-                <Container>
-                    <Navbar.Brand style={{color:"white"}} href="#home">Portfolio</Navbar.Brand>
-                    <Navbar.Toggle  aria-controls="basic-navbar-nav" />
-                    <Navbar.Collapse id="basic-navbar-nav">
-                        <Nav className="me-auto">
-                            <Nav.Link style={{color:"white"}} href="#home">Home</Nav.Link>
-                            <Nav.Link style={{color:"white"}} href="#about">About</Nav.Link>
-                            <Nav.Link style={{color:"white"}} href="#skills">Skills</Nav.Link>
-                            <Nav.Link style={{color:"white"}} href="#projects">Projects</Nav.Link>
-                            <Nav.Link style={{color:"white"}} href="#education">Education</Nav.Link>
-                            <Nav.Link style={{color:"white"}} href="#contact">Contact</Nav.Link>
-                            
-                            
-                        </Nav>
-                    </Navbar.Collapse>
-                </Container>
-            </Navbar>
-            </Content>
-        </>)
+  return (
+    <Content>
+      <Navbar
+        expand="lg"
+        bg="transparent"
+        variant="dark"
+        expanded={expanded}
+        onToggle={(expanded) => setExpanded(expanded)}
+      >
+        <Container>
+          <Navbar.Brand href="#home">
+            Portfolio
+          </Navbar.Brand>
+
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="ms-auto">
+              <Nav.Link href="#home" onClick={closeMenu}>Home</Nav.Link>
+              <Nav.Link href="#about" onClick={closeMenu}>About</Nav.Link>
+              <Nav.Link href="#skills" onClick={closeMenu}>Skills</Nav.Link>
+              <Nav.Link href="#projects" onClick={closeMenu}>Projects</Nav.Link>
+              <Nav.Link href="#education" onClick={closeMenu}>Education</Nav.Link>
+              <Nav.Link href="#contact" onClick={closeMenu}>Contact</Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
+    </Content>
+  );
 }
+
 export default MyNavbar;
