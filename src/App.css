@@ -1,0 +1,54 @@
+html,
+body,
+#root {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    background-image: url("/hero.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+
+.card {
+  padding: 20px;
+  margin: 20px;
+  /* background: #222; */
+  color: white;
+  border-radius: 10px;
+}
+
+.education-container{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;   /* Moves cards to next line on smaller screens */
+    margin-top: 40px;
+}
+
+.education-card{
+    width: 280px;
+    min-height: 280px;
+    padding: 20px;
+    /* background: rgba(2, 49, 83, 0.35); */
+    color: white;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,.2);
+}
+
+#about,#home,
+#projects {
+    scroll-margin-top: 250px;   /* Adjust according to navbar height */
+}
+#skills{
+  scroll-margin-top: 150px; 
+}
+#contact{
+    scroll-margin-top: 110px; 
+}
