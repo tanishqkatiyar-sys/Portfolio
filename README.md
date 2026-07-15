@@ -205,12 +205,6 @@ If you found this project useful, please consider giving it a **⭐ Star** on Gi
 
 ---
 
-# 📄 License
-
-This project is licensed under the **MIT License**.
-
----
-
 ## 🙌 Thank You for Visiting!
 
 Thank you for taking the time to explore my portfolio. Feel free to connect with me on LinkedIn or GitHub for collaboration, opportunities, or technical discussions.
