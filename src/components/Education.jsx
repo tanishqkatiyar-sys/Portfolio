@@ -69,31 +69,31 @@ const Card = styled(motion.div)`
 
 function Education() {
   const education = [
-    {
-      title: "High School",
-      year: "2020",
-      institute: "Jai Narayan Vidya Mandir Inter College",
-      percentage: "78%",
-      description:
-        "Completed Class 10 and developed a strong foundation in Mathematics and Science.",
-    },
-    {
-      title: "Intermediate",
-      year: "2022",
-      institute: "Jai Narayan Vidya Mandir Inter College",
-      percentage: "89%",
-      description:
-        "Completed Class 12 with PCM and developed a keen interest in programming and technology.",
-    },
-    {
-      title: "B.Tech Information Technology",
-      year: "2023 - 2027",
-      institute: "Harcourt Butler Technical University",
-      percentage: "Current CGPA: 7.7",
-      description:
-        "Currently pursuing B.Tech in Information Technology while learning React, Data Structures & Algorithms, and modern web development.",
-    },
-  ];
+  {
+    title: "High School",
+    year: "2020",
+    institute: "Jai Narayan Vidya Mandir Inter College",
+    percentage: "78%",
+    description:
+      "Completed Class 10 with a strong foundation in Mathematics, Science, and analytical thinking.",
+  },
+  {
+    title: "Intermediate (PCM)",
+    year: "2022",
+    institute: "Jai Narayan Vidya Mandir Inter College",
+    percentage: "89%",
+    description:
+      "Completed Class 12 with Physics, Chemistry, and Mathematics, developing a strong interest in programming and problem-solving.",
+  },
+  {
+    title: "Bachelor of Technology (Information Technology)",
+    year: "2023 – 2027",
+    institute: "Harcourt Butler Technical University",
+    percentage: "Current CGPA: 7.7/10",
+    description:
+      "Currently pursuing B.Tech in Information Technology with a focus on Artificial Intelligence, Machine Learning, Data Analysis, and Data Structures & Algorithms through hands-on projects and continuous learning.",
+  },
+];
 
   return (
     <Section

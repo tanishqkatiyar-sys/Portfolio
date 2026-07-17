@@ -124,7 +124,7 @@ function Hero() {
 
         <p>Hello, I'm TANISHQ KATIYAR</p>
 
-        <b>Frontend Developer</b>
+        <b>Aspiring AI/ML Engineer</b>
 
         <p>B.Tech IT @ HBTU</p>
 

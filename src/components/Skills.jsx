@@ -48,28 +48,40 @@ const Content = styled.div`
 
 const skills = [
   {
-    name: "HTML",
-    description: "Builds the structure of web pages."
+    name: "Python",
+    description: "Programming for data analysis, automation, and machine learning."
   },
   {
-    name: "CSS",
-    description: "Styles and layouts web pages."
+    name: "NumPy",
+    description: "Efficient numerical computing and array operations."
   },
   {
-    name: "JavaScript",
-    description: "Adds interactivity and dynamic behavior."
+    name: "Pandas",
+    description: "Data cleaning, manipulation, and exploratory data analysis."
   },
   {
-    name: "React",
-    description: "Builds modern user interfaces using components."
+    name: "Matplotlib",
+    description: "Creating visualizations to analyze and communicate insights."
+  },
+  {
+    name: "Seaborn",
+    description: "Statistical data visualization and exploratory analysis."
+  },
+  {
+    name: "Statistics",
+    description: "Learning descriptive statistics, probability, and statistical concepts for machine learning."
   },
   {
     name: "C++",
-    description: "Strong foundation in programming and problem solving."
+    description: "Strong foundation in programming, algorithms, and problem-solving."
   },
   {
-    name: "GitHub",
-    description: "Version control and collaborative development."
+    name: "HTML & CSS",
+    description: "Building responsive and user-friendly web interfaces."
+  },
+  {
+    name: "Git & GitHub",
+    description: "Version control and collaborative software development."
   }
 ];
 

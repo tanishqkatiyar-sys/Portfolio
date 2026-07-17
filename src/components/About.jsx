@@ -73,20 +73,23 @@ function About() {
         <p>
           I am Tanishq Katiyar, a B.Tech student in Information Technology at
           Harcourt Butler Technical University (HBTU), Kanpur. I am passionate
-          about software development and enjoy creating modern web applications.
+          about Artificial Intelligence, Machine Learning, and Data Science, and
+          enjoy solving real-world problems through data-driven solutions.
         </p>
 
         <p>
-          My technical skills include C++, JavaScript, React.js, HTML, CSS,
-          Bootstrap, and Data Structures & Algorithms. I regularly practice
-          coding problems to strengthen my logical thinking and programming
-          skills.
+          My technical skills include Python, C++, SQL, NumPy, Pandas,
+          Matplotlib, Seaborn, and Data Structures & Algorithms. I am currently
+          strengthening my knowledge of data analysis, data visualization, and
+          machine learning while building practical projects using real-world
+          datasets.
         </p>
 
         <p>
-          My goal is to secure a Software Development Internship where I can
-          contribute, learn from experienced professionals, and grow into a
-          skilled software engineer.
+          My goal is to secure an AI/ML or Data Science internship where I can
+          apply my analytical and programming skills, learn from experienced
+          professionals, and contribute to building intelligent, data-driven
+          applications.
         </p>
       </Content>
     </motion.section>

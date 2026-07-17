@@ -91,7 +91,7 @@ function Contact() {
 
   const contactInfo = [
     { label: "Name", value: "Tanishq Katiyar" },
-    { label: "Role", value: "Frontend Developer" },
+    { label: "Role", value: "Aspiring AI/ML Engineer" },,
     { label: "Email", value: "tanishqkatiyar@gmail.com" },
     { label: "Phone", value: "+91 7275399121" },
     { label: "Location", value: "Kanpur, Uttar Pradesh" },

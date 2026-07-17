@@ -16,55 +16,52 @@ const Section = styled(motion.section)`
 
 const Title = styled.h1`
   color: white;
-  text-align: center;
   margin-bottom: 40px;
 `;
 
-const Content = styled(motion.div)`
-  width: min(800px, 95vw);
+const Content = styled.div`
+  width: min(1000px, 95vw);
 
-  padding: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
 
-  border: 1px solid rgba(255,255,255,0.2);
-  border-radius: 15px;
+  gap: 25px;
+`;
 
-  background: rgba(255,255,255,0.05);
-  backdrop-filter: blur(10px);
+const Card = styled(motion.div)`
+  padding: 28px;
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
 
   color: white;
 
-  box-shadow: 0 10px 25px rgba(0,0,0,.3);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
 
-  box-sizing: border-box;
-
-  h3{
-    color:#00d4ff;
-    margin-bottom:20px;
-    font-size:1.5rem;
+  h3 {
+    color: #00d4ff;
+    margin-bottom: 20px;
+    font-size: 1.4rem;
   }
 
-  ul{
-    padding-left:20px;
+  ul {
+    padding-left: 20px;
   }
 
-  li{
-    margin:15px 0;
-    line-height:1.8;
-    font-size:1rem;
+  li {
+    margin: 12px 0;
+    line-height: 1.7;
   }
 
-  @media(max-width:768px){
+  @media (max-width: 768px) {
+    padding: 20px;
 
-    padding:20px;
-
-    h3{
-      font-size:1.25rem;
-      text-align:center;
-    }
-
-    li{
-      font-size:.95rem;
-      line-height:1.6;
+    h3 {
+      text-align: center;
+      font-size: 1.2rem;
     }
   }
 `;
@@ -73,51 +70,92 @@ function Projects() {
   return (
     <Section
       id="projects"
-      initial={{ opacity: 0, y: 100 }}
+      initial={{ opacity: 0, y: 80 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
       viewport={{ once: false, amount: 0.3 }}
     >
       <Title>Projects</Title>
 
-      <Content
-        initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
-        whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
-        transition={{
-          duration: 0.8,
-          delay: 0.2,
-          type: "spring",
-          stiffness: 100,
-        }}
-        whileHover={{
-          scale: 1.03,
-          y: -10,
-          boxShadow: "0 15px 35px rgba(0,150,255,.35)",
-        }}
-      >
-        <h3>🚀 Personal Portfolio Website</h3>
+      <Content>
+        <Card
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          whileHover={{
+            y: -10,
+            scale: 1.03,
+            boxShadow: "0 18px 40px rgba(0,212,255,.25)",
+          }}
+          transition={{
+            type: "spring",
+            stiffness: 220,
+            damping: 18,
+          }}
+        >
+          <h3>📊 Netflix Movies & TV Shows Data Analysis</h3>
 
-        <ul>
-          <li>
-            Developed a responsive personal portfolio using React.js,
-            JavaScript, HTML, CSS, Bootstrap, and styled-components.
-          </li>
+          <ul>
+            <li>
+              Performed exploratory data analysis on the Netflix Movies &
+              TV Shows dataset using Python.
+            </li>
 
-          <li>
-            Implemented smooth scrolling navigation and responsive layouts
-            with engaging UI animations.
-          </li>
+            <li>
+              Cleaned and transformed data by handling missing values,
+              duplicates, and date conversions.
+            </li>
 
-          <li>
-            Showcases personal information, technical skills, projects,
-            education, and contact details.
-          </li>
+            <li>
+              Created insightful visualizations to analyze genres, ratings,
+              countries, release trends, and content distribution.
+            </li>
 
-          <li>
-            Built using reusable React components with a clean,
-            modern design.
-          </li>
-        </ul>
+            <li>
+              Extracted meaningful insights through data visualization and
+              storytelling.
+            </li>
+          </ul>
+        </Card>
+
+        <Card
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          whileHover={{
+            y: -10,
+            scale: 1.03,
+            boxShadow: "0 18px 40px rgba(0,212,255,.25)",
+          }}
+          transition={{
+            type: "spring",
+            stiffness: 220,
+            damping: 18,
+            delay: 0.1,
+          }}
+        >
+          <h3>💻 Personal Portfolio</h3>
+
+          <ul>
+            <li>
+              Designed and developed a responsive portfolio to showcase
+              projects, skills, education, and achievements.
+            </li>
+
+            <li>
+              Built using reusable React components with a clean and modern
+              user interface.
+            </li>
+
+            <li>
+              Optimized for responsiveness across desktop, tablet, and mobile
+              devices.
+            </li>
+
+            <li>
+              Deployed on Vercel with GitHub integration for continuous
+              updates.
+            </li>
+          </ul>
+        </Card>
       </Content>
     </Section>
   );
