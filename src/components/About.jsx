@@ -19,20 +19,20 @@ const Content = styled.div`
 
   box-sizing: border-box;
 
-  p{
-    margin:15px 0;
-    line-height:1.8;
-    font-size:1.05rem;
-    text-align:justify;
+  p {
+    margin: 15px 0;
+    line-height: 1.8;
+    font-size: 1.05rem;
+    text-align: justify;
   }
 
-  @media (max-width:768px){
-    width:95vw;
-    padding:18px;
+  @media (max-width:768px) {
+    width: 95vw;
+    padding: 18px;
 
-    p{
-      font-size:0.95rem;
-      line-height:1.6;
+    p {
+      font-size: 0.95rem;
+      line-height: 1.6;
     }
   }
 `;
@@ -71,25 +71,50 @@ function About() {
 
       <Content>
         <p>
-          I am Tanishq Katiyar, a B.Tech student in Information Technology at
-          Harcourt Butler Technical University (HBTU), Kanpur. I am passionate
-          about Artificial Intelligence, Machine Learning, and Data Science, and
-          enjoy solving real-world problems through data-driven solutions.
+          I am Tanishq Katiyar, a B.Tech student in Information
+          Technology at Harcourt Butler Technical University
+          (HBTU), Kanpur, with a CGPA of 7.7/10. I am passionate
+          about Artificial Intelligence, Machine Learning,
+          Natural Language Processing, and Data Science. I enjoy
+          solving real-world problems through programming and
+          data-driven solutions.
         </p>
 
         <p>
-          My technical skills include Python, C++, SQL, NumPy, Pandas,
-          Matplotlib, Seaborn, and Data Structures & Algorithms. I am currently
-          strengthening my knowledge of data analysis, data visualization, and
-          machine learning while building practical projects using real-world
-          datasets.
+          My technical skills include Python, C++, Data Structures
+          and Algorithms, Machine Learning, NLP, and Data Analysis.
+          I have hands-on experience with Scikit-learn, Pandas,
+          NumPy, Matplotlib, and Seaborn, along with frontend
+          technologies such as HTML, CSS, and JavaScript.
+          I also have knowledge of Node.js, Express.js, and
+          PostgreSQL.
         </p>
 
         <p>
-          My goal is to secure an AI/ML or Data Science internship where I can
-          apply my analytical and programming skills, learn from experienced
-          professionals, and contribute to building intelligent, data-driven
-          applications.
+          I have developed an NLP-based multi-class emotion
+          classification model using Python and Scikit-learn
+          to classify text into six emotions: Sadness, Anger,
+          Love, Surprise, Fear, and Joy. I have also performed
+          exploratory data analysis on more than 8,800 Netflix
+          titles using Pandas, NumPy, Matplotlib, and Seaborn
+          to identify trends and generate meaningful insights.
+        </p>
+
+        <p>
+          Alongside my academic and personal projects, I worked
+          as a Web Development Intern at InAmigos Foundation,
+          where I developed and improved responsive web interfaces
+          using HTML, CSS, and JavaScript, focusing on website
+          design and user experience.
+        </p>
+
+        <p>
+          I am continuously improving my problem-solving,
+          analytical, and technical skills through practical
+          projects and consistent learning. My goal is to build
+          intelligent, data-driven applications, gain industry
+          experience, and contribute to meaningful projects in
+          Machine Learning, AI, and Data Science.
         </p>
       </Content>
     </motion.section>

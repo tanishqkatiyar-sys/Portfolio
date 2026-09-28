@@ -28,60 +28,112 @@ const Content = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
 
   gap: 25px;
-
   padding: 25px;
 
   border: 1px solid rgba(255,255,255,.2);
   border-radius: 15px;
 
   backdrop-filter: blur(10px);
-
   box-shadow: 0 8px 20px rgba(0,0,0,.25);
 
   box-sizing: border-box;
 
-  @media (max-width:768px){
-    padding:18px;
-    gap:18px;
+  @media (max-width:768px) {
+    padding: 18px;
+    gap: 18px;
   }
 `;
 
 const skills = [
   {
     name: "Python",
-    description: "Programming for data analysis, automation, and machine learning."
-  },
-  {
-    name: "NumPy",
-    description: "Efficient numerical computing and array operations."
-  },
-  {
-    name: "Pandas",
-    description: "Data cleaning, manipulation, and exploratory data analysis."
-  },
-  {
-    name: "Matplotlib",
-    description: "Creating visualizations to analyze and communicate insights."
-  },
-  {
-    name: "Seaborn",
-    description: "Statistical data visualization and exploratory analysis."
-  },
-  {
-    name: "Statistics",
-    description: "Learning descriptive statistics, probability, and statistical concepts for machine learning."
+    description:
+      "Programming for machine learning, data analysis, data preprocessing, and automation."
   },
   {
     name: "C++",
-    description: "Strong foundation in programming, algorithms, and problem-solving."
+    description:
+      "Strong foundation in programming, data structures, algorithms, and problem-solving."
+  },
+  {
+    name: "Machine Learning",
+    description:
+      "Knowledge of supervised and unsupervised learning, model training, and evaluation."
+  },
+  {
+    name: "Scikit-learn",
+    description:
+      "Building and evaluating machine learning models for classification and prediction."
+  },
+  {
+    name: "Natural Language Processing",
+    description:
+      "Text preprocessing, tokenization, stopword removal, and text classification."
+  },
+  {
+    name: "Pandas",
+    description:
+      "Data cleaning, manipulation, preprocessing, and exploratory data analysis."
+  },
+  {
+    name: "NumPy",
+    description:
+      "Numerical computing, multidimensional arrays, and efficient mathematical operations."
+  },
+  {
+    name: "Matplotlib",
+    description:
+      "Creating charts and visualizations to analyze and present data insights."
+  },
+  {
+    name: "Seaborn",
+    description:
+      "Statistical data visualization, distribution analysis, and relationship exploration."
+  },
+  {
+    name: "Statistics",
+    description:
+      "Statistical analysis, probability, descriptive statistics, and data interpretation."
+  },
+  {
+    name: "Data Analysis",
+    description:
+      "Exploratory data analysis, data cleaning, feature engineering, and insight generation."
   },
   {
     name: "HTML & CSS",
-    description: "Building responsive and user-friendly web interfaces."
+    description:
+      "Building responsive, structured, and user-friendly web interfaces."
+  },
+  {
+    name: "JavaScript",
+    description:
+      "Developing interactive web applications and dynamic frontend functionality."
+  },
+  {
+    name: "Node.js & Express.js",
+    description:
+      "Building server-side applications, REST APIs, and backend functionality."
+  },
+  {
+    name: "PostgreSQL",
+    description:
+      "Relational database concepts, SQL queries, and structured data management."
   },
   {
     name: "Git & GitHub",
-    description: "Version control and collaborative software development."
+    description:
+      "Version control, source code management, and project collaboration."
+  },
+  {
+    name: "Jupyter Notebook",
+    description:
+      "Data analysis, experimentation, visualization, and machine learning workflows."
+  },
+  {
+    name: "Streamlit",
+    description:
+      "Developing interactive web applications for machine learning and data science projects."
   }
 ];
 
@@ -94,7 +146,7 @@ function Skills() {
       transition={{ duration: 0.8 }}
       viewport={{ once: false, amount: 0.3 }}
     >
-      <Title>Skills</Title>
+      <Title>Technical Skills</Title>
 
       <Content>
         {skills.map((skill, index) => (
@@ -111,10 +163,11 @@ function Skills() {
             whileTap={{ scale: 0.95 }}
             transition={{
               duration: 0.4,
-              delay: index * 0.1,
+              delay: (index % 4) * 0.08,
               type: "spring",
               stiffness: 250
             }}
+            viewport={{ once: true }}
           >
             <h2>{skill.name}</h2>
             <p>{skill.description}</p>

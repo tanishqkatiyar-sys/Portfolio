@@ -26,6 +26,10 @@ const Content = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
 
   gap: 25px;
+
+  @media (max-width: 500px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const Card = styled(motion.div)`
@@ -47,6 +51,13 @@ const Card = styled(motion.div)`
     font-size: 1.4rem;
   }
 
+  .tech {
+    color: #60a5fa;
+    font-size: 0.9rem;
+    line-height: 1.7;
+    margin-bottom: 15px;
+  }
+
   ul {
     padding-left: 20px;
   }
@@ -54,6 +65,22 @@ const Card = styled(motion.div)`
   li {
     margin: 12px 0;
     line-height: 1.7;
+  }
+
+  .demo {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 18px;
+    border: 1px solid #00d4ff;
+    border-radius: 8px;
+    color: #00d4ff;
+    text-decoration: none;
+    transition: 0.3s;
+
+    &:hover {
+      background: #00d4ff;
+      color: #111827;
+    }
   }
 
   @media (max-width: 768px) {
@@ -78,6 +105,7 @@ function Projects() {
       <Title>Projects</Title>
 
       <Content>
+        {/* NLP Project */}
         <Card
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -92,31 +120,52 @@ function Projects() {
             damping: 18,
           }}
         >
-          <h3>📊 Netflix Movies & TV Shows Data Analysis</h3>
+          <h3>🤖 NLP-based Multi-class Emotion Classification</h3>
+
+          <p className="tech">
+            Python | NLP | Scikit-learn | Pandas | NLTK | Streamlit
+          </p>
 
           <ul>
             <li>
-              Performed exploratory data analysis on the Netflix Movies &
-              TV Shows dataset using Python.
+              Developed an NLP-based multi-class classification model
+              to classify text into six emotions: Sadness, Anger, Love,
+              Surprise, Fear, and Joy.
             </li>
 
             <li>
-              Cleaned and transformed data by handling missing values,
-              duplicates, and date conversions.
+              Performed text preprocessing, including lowercasing,
+              punctuation and digit removal, tokenization, stopword
+              removal, and duplicate removal.
             </li>
 
             <li>
-              Created insightful visualizations to analyze genres, ratings,
-              countries, release trends, and content distribution.
+              Applied Bag-of-Words and TF-IDF for text feature
+              extraction to convert text into numerical data.
             </li>
 
             <li>
-              Extracted meaningful insights through data visualization and
-              storytelling.
+              Compared Naive Bayes and Logistic Regression
+              classifiers for emotion classification.
+            </li>
+
+            <li>
+              Built an interactive application using Streamlit
+              to classify user-input text.
             </li>
           </ul>
+
+          <a
+            className="demo"
+            href="https://nlp-based-emotion-classification-k4wptrntjunappzzpkgg5am.streamlit.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Live Demo ↗
+          </a>
         </Card>
 
+        {/* Netflix Data Analysis */}
         <Card
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -132,27 +181,40 @@ function Projects() {
             delay: 0.1,
           }}
         >
-          <h3>💻 Personal Portfolio</h3>
+          <h3>📊 Netflix Movies & TV Shows Data Analysis</h3>
+
+          <p className="tech">
+            Python | Pandas | NumPy | Matplotlib | Seaborn
+          </p>
 
           <ul>
             <li>
-              Designed and developed a responsive portfolio to showcase
-              projects, skills, education, and achievements.
+              Analyzed more than 8,800 Netflix titles to identify
+              trends across content types, genres, ratings,
+              countries, and release years.
             </li>
 
             <li>
-              Built using reusable React components with a clean and modern
-              user interface.
+              Performed data cleaning and preprocessing by handling
+              missing values, removing duplicates, and converting
+              date formats.
             </li>
 
             <li>
-              Optimized for responsiveness across desktop, tablet, and mobile
-              devices.
+              Applied feature engineering to extract year and month
+              from dates and derive movie duration and TV show
+              season features.
             </li>
 
             <li>
-              Deployed on Vercel with GitHub integration for continuous
-              updates.
+              Conducted exploratory data analysis and statistical
+              analysis using Pandas, Matplotlib, and Seaborn.
+            </li>
+
+            <li>
+              Created data visualizations to identify content
+              distribution, release trends, and other meaningful
+              insights.
             </li>
           </ul>
         </Card>
